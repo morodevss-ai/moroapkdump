@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark"
+    android:padding="16dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🐺 WolfDumper"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/accent" />
+
+        <!-- Root badge -->
+        <TextView
+            android:id="@+id/tvRootStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⬤ NO ROOT"
+            android:textSize="11sp"
+            android:textColor="@color/red"
+            android:background="@drawable/badge_bg"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp" />
+    </LinearLayout>
+
+    <!-- Status cards row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <LinearLayout
+            android:id="@+id/cardDotnet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="10dp"
+            android:layout_marginEnd="6dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="dotnet" android:textColor="@color/text_secondary" android:textSize="10sp"/>
+            <TextView android:id="@+id/tvDotnet"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="—" android:textColor="@color/yellow" android:textSize="12sp" android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cardIl2cpp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="10dp"
+            android:layout_marginEnd="6dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Il2CppDumper" android:textColor="@color/text_secondary" android:textSize="10sp"/>
+            <TextView android:id="@+id/tvIl2cpp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="—" android:textColor="@color/yellow" android:textSize="12sp" android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="10dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Target" android:textColor="@color/text_secondary" android:textSize="10sp"/>
+            <TextView android:id="@+id/tvTarget"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="—" android:textColor="@color/yellow" android:textSize="12sp" android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Game selector -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFF"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Free Fire"
+            android:textSize="12sp"
+            android:layout_marginEnd="6dp"
+            android:textColor="@color/accent"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFFMax"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="FF MAX"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"/>
+    </LinearLayout>
+
+    <!-- Progress bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_bg"
+        android:padding="12dp"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+            <TextView android:id="@+id/tvStage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ready"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"/>
+            <TextView android:id="@+id/tvPct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0%"
+                android:textColor="@color/accent"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:max="100"
+            android:progress="0"
+            android:progressTint="@color/accent"
+            android:progressBackgroundTint="@color/divider"/>
+    </LinearLayout>
+
+    <!-- Console log -->
+    <ScrollView
+        android:id="@+id/scrollConsole"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/card_bg"
+        android:layout_marginBottom="8dp"
+        android:padding="10dp"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/tvConsole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:lineSpacingMultiplier="1.4"
+            android:text="WolfDumper v3.0 — console ready\n"/>
+    </ScrollView>
+
+    <!-- Action buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDump"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="2"
+            android:text="▶  FULL DUMP"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/accent"
+            android:layout_marginEnd="8dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnExport"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:text="EXPORT"
+            android:textSize="12sp"
+            android:textColor="@color/accent"
+            android:enabled="false"/>
+    </LinearLayout>
+
+</LinearLayout>
